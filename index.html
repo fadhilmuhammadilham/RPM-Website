@@ -1,10 +1,86 @@
 <!doctype html>
-<html>
+<html data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="src/output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <div class="navbar bg-base-100 shadow-sm">
+    <!-- Kiri (logo) -->
+    <div class="navbar-start">
+      <a class="btn btn-ghost text-xl"><img src="src/img/logoTanpaBorder.png" alt="" class="w-24 h-auto ml-5"></a>
+    </div>
+
+    <!-- Kanan (menu) -->
+    <div class="navbar-end">
+      <!-- Mobile dropdown -->
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a>Beranda</a></li>
+
+          <li>
+            <details>
+              <summary>Tentang Kami</summary>
+              <ul class="pl-4">
+                <li><a>Tentang Kami</a></li>
+                <li><a>Pengalaman Kami</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Layanan</summary>
+              <ul class="pl-4">
+                <li><a>Event Organizer</a></li>
+                <li><a>Event Promotion Support</a></li>
+                <li><a>Technical Event Production</a></li>
+                <li><a>Mojivee Kitchen</a></li>
+              </ul>
+            </details>
+          </li>
+
+          <li><a>Kontak Kami</a></li>
+        </ul>
+
+      </div>
+
+      <!-- Menu desktop -->
+      <ul class="menu menu-horizontal px-1 hidden lg:flex mr-10">
+        <li><a>Beranda</a></li>
+        <li class="dropdown dropdown-hover">
+          <a tabindex="0">Tentang Kami</a>
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40 mt-4">
+            <li><a>Tentang Kami</a></li>
+            <li><a>Pengalaman Kami</a></li>
+          </ul>
+        </li>
+        <li class="dropdown dropdown-hover">
+          <a tabindex="0">Layanan</a>
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40 mt-4">
+            <li><a>Event Organizer</a></li>
+            <li><a>Event Promotion Support</a></li>
+            <li><a>Technical Event Production</a></li>
+            <li><a>Mojivee Kitchen</a></li>
+          </ul>
+        </li>
+        <li><a>Kontak Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="text-3xl font-bold underline mt-6">
+    Hello world!
+  </h1>
 </body>
+
 </html>
