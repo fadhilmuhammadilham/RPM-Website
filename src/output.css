@@ -705,123 +705,6 @@ video {
   scrollbar-color: color-mix(in oklch, currentColor 35%, #0000) #0000;
 }
 
-:where(.btn) {
-  width: unset;
-}
-
-.btn {
-  display: inline-flex;
-  flex-shrink: 0;
-  cursor: pointer;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: calc(0.25rem * 1.5);
-  text-align: center;
-  vertical-align: middle;
-  outline-offset: 2px;
-  webkit-user-select: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  padding-inline: var(--btn-p);
-  color: var(--btn-fg);
-  --tw-prose-links: var(--btn-fg);
-  height: var(--size);
-  font-size: var(--fontsize, 0.875rem);
-  font-weight: 600;
-  outline-color: var(--btn-color, var(--color-base-content));
-  transition-property: color, background-color, border-color, box-shadow;
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  transition-duration: 0.2s;
-  border-start-start-radius: var(--join-ss, var(--radius-field));
-  border-start-end-radius: var(--join-se, var(--radius-field));
-  border-end-start-radius: var(--join-es, var(--radius-field));
-  border-end-end-radius: var(--join-ee, var(--radius-field));
-  background-color: var(--btn-bg);
-  background-size: auto, calc(var(--noise) * 100%);
-  background-image: none, var(--btn-noise);
-  border-width: var(--border);
-  border-style: solid;
-  border-color: var(--btn-border);
-  text-shadow: 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 0.15));
-  touch-action: manipulation;
-  box-shadow: 0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
-  --size: calc(var(--size-field, 0.25rem) * 10);
-  --btn-bg: var(--btn-color, var(--color-base-200));
-  --btn-fg: var(--color-base-content);
-  --btn-p: 1rem;
-  --btn-border: color-mix(in oklab, var(--btn-bg), #000 calc(var(--depth) * 5%));
-  --btn-shadow: 0 3px 2px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000),
-    0 4px 3px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000);
-  --btn-noise: var(--fx-noise);
-}
-
-.prose .btn {
-  text-decoration-line: none;
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
-  }
-}
-
-.btn:focus-visible {
-  outline-width: 2px;
-  outline-style: solid;
-  isolation: isolate;
-}
-
-.btn:active:not(.btn-active) {
-  translate: 0 0.5px;
-  --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 5%);
-  --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
-  --btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
-}
-
-.btn:is(:disabled, [disabled], .btn-disabled):not(.btn-link, .btn-ghost) {
-  background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
-  box-shadow: none;
-}
-
-.btn:is(:disabled, [disabled], .btn-disabled) {
-  pointer-events: none;
-  --btn-border: #0000;
-  --btn-noise: none;
-  --btn-fg: color-mix(in oklch, var(--color-base-content) 20%, #0000);
-}
-
-@media (hover: hover) {
-  .btn:is(:disabled, [disabled], .btn-disabled):hover {
-    pointer-events: none;
-    background-color: color-mix(in oklab, var(--color-neutral) 20%, transparent);
-    --btn-border: #0000;
-    --btn-fg: color-mix(in oklch, var(--color-base-content) 20%, #0000);
-  }
-}
-
-.btn:is(input[type="checkbox"], input[type="radio"]) {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.btn:is(input[type="checkbox"], input[type="radio"])::after {
-  content: attr(aria-label);
-}
-
-.btn:where(input:checked:not(.filter .btn)) {
-  --btn-color: var(--color-primary);
-  --btn-fg: var(--color-primary-content);
-  isolation: isolate;
-}
-
-.btn-primary {
-  --btn-color: var(--color-primary);
-  --btn-fg: var(--color-primary-content);
-}
-
 @keyframes progress {
   50% {
     background-position-x: -115%;
@@ -857,6 +740,16 @@ video {
   outline-offset: 2px;
 }
 
+.link-hover {
+  text-decoration-line: none;
+}
+
+@media (hover: hover) {
+  .link-hover:hover {
+    text-decoration-line: underline;
+  }
+}
+
 @keyframes skeleton {
   0% {
     background-position: 150%;
@@ -865,6 +758,41 @@ video {
   100% {
     background-position: -50%;
   }
+}
+
+.footer {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  place-items: start;
+  -moz-column-gap: calc(0.25rem * 4);
+       column-gap: calc(0.25rem * 4);
+  row-gap: calc(0.25rem * 10);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.footer > * {
+  display: grid;
+  place-items: start;
+  gap: calc(0.25rem * 2);
+}
+
+.footer.footer-center {
+  grid-auto-flow: column dense;
+  place-items: center;
+  text-align: center;
+}
+
+.footer.footer-center > * {
+  place-items: center;
+}
+
+.footer-title {
+  margin-bottom: calc(0.25rem * 2);
+  text-transform: uppercase;
+  opacity: 60%;
+  font-weight: 600;
 }
 
 @keyframes dropdown {
@@ -895,15 +823,80 @@ video {
   }
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+.bg-neutral {
+  background-color: var(--color-neutral);
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.underline {
-  text-decoration-line: underline;
+.text-neutral-content {
+  color: var(--color-neutral-content);
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+@media (min-width: 640px) {
+  .sm\:footer-horizontal {
+    grid-auto-flow: column;
+  }
+
+  .sm\:footer-horizontal.footer-center {
+    grid-auto-flow: row dense;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
