@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './index.html',
-    './contact.html', // semua HTML dalam folder pages/
+    './pages/**/*.html',
   ],
   theme: {
     extend: {
@@ -13,4 +13,3 @@ module.exports = {
   },
   plugins: [require('daisyui')],
 }
-
