@@ -30,79 +30,137 @@
 
   <!-- Header -->
   <header>
-    <div id="navbar" class="navbar bg-base-100 shadow-sm fixed top-0 left-0 w-full z-50 transition-all duration-300">
-      <!-- Kiri (logo) -->
-      <div class="navbar-start">
-        <a href="index.html" class="text-xl"><img src="src/img/logoTanpaBorder.png" alt="" class="w-20 h-auto ml-5"></a>
-      </div>
+    <div id="navbar"
+      class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ease-in-out bg-transparent text-white">
 
-      <!-- Kanan (menu) -->
-      <div class="navbar-end">
-        <!-- Mobile dropdown -->
-        <div class="dropdown dropdown-end lg:hidden">
-          <div tabindex="0" role="button" class="btn btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
+      <!-- Logo -->
+      <a href="#" class="text-lg font-bold">
+        <img id="navbar-logo" src="src/img/logoTanpaBorder.png" alt="Logo"
+          class="w-24 h-auto ml-20 transition duration-300 ease-in-out" />
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex space-x-8 font-medium mr-20">
+        <a href="#" class="hover:text-primary transition">Beranda</a>
+        <div class="relative group">
+          <button class="hover:text-primary transition">Tentang Kami</button>
+          <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-44">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
           </div>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Beranda</a></li>
-
-            <li>
-              <details>
-                <summary>Tentang Kami</summary>
-                <ul class="pl-4">
-                  <li><a>Tentang Kami</a></li>
-                  <li><a>Pengalaman Kami</a></li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary>Layanan</summary>
-                <ul class="pl-4">
-                  <li><a>Event Organizer</a></li>
-                  <li><a>Event Promotion Support</a></li>
-                  <li><a>Technical Event Production</a></li>
-                  <li><a>Mojivee Kitchen</a></li>
-                </ul>
-              </details>
-            </li>
-
-            <li><a>Kontak Kami</a></li>
-          </ul>
-
         </div>
+        <div class="relative group">
+          <button class="hover:text-primary transition">Layanan</button>
+          <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-64">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Promotion Support</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Technical Event Production</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
+          </div>
+        </div>
+        <a href="#" class="hover:text-primary transition">Kontak Kami</a>
+      </nav>
 
-        <!-- Menu desktop -->
-        <ul class="menu menu-horizontal px-1 hidden lg:flex mr-10">
-          <li><a class="hover:underline hover:bg-white hover:font-bold hover:text-lg transition-all duration-500">Beranda</a></li>
-          <li class="dropdown dropdown-hover rounded-md hover:bg-teal-700 hover:text-white  hover:font-bold transition-all duration-300">
-            <a tabindex="0">Tentang Kami</a>
-            <ul class="dropdown-content menu p-2 text-black shadow bg-base-100 rounded-box w-40 mt-4 font-normal">
-              <li><a>Tentang Kami</a></li>
-              <li><a>Pengalaman Kami</a></li>
-            </ul>
-          </li>
-          <li class="dropdown dropdown-hover rounded-md hover:bg-cyan-700 hover:text-white  hover:font-bold transition-all duration-300">
-            <a tabindex="0">Layanan</a>
-            <ul class="dropdown-content menu p-2 text-black font-normal shadow bg-base-100 rounded-box w-40 mt-4">
-              <li><a>Event Organizer</a></li>
-              <li><a>Event Promotion Support</a></li>
-              <li><a>Technical Event Production</a></li>
-              <li><a>Mojivee Kitchen</a></li>
-            </ul>
-          </li>
-          <li><a class="hover:underline hover:bg-white hover:font-bold transition-all duration-500">Kontak Kami</a></li>
-        </ul>
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white transition-colors duration-300 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white text-black px-6 py-4 space-y-2 shadow">
+      <a href="#" class="block">Beranda</a>
+      <details>
+        <summary class="cursor-pointer">Tentang Kami</summary>
+        <ul class="pl-4 space-y-1">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Pengalaman Kami</a></li>
+        </ul>
+      </details>
+      <details>
+        <summary class="cursor-pointer">Layanan</summary>
+        <ul class="pl-4 space-y-1">
+          <li><a href="#">Event Organizer</a></li>
+          <li><a href="#">Event Promotion Support</a></li>
+          <li><a href="#">Technical Event Production</a></li>
+          <li><a href="#">Mojivee Kitchen</a></li>
+        </ul>
+      </details>
+      <a href="#" class="block">Kontak Kami</a>
+    </div>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      const logo = document.getElementById('navbar-logo');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+          navbar.classList.add('bg-white', 'bg-opacity-90', 'backdrop-blur', 'shadow', 'text-black');
+          navbar.classList.remove('bg-transparent', 'text-white');
+          menuToggle.classList.remove('text-white');
+          menuToggle.classList.add('text-black');
+          logo.src = 'src/img/logoTanpaBorder.png';
+        } else {
+          navbar.classList.remove('bg-white', 'bg-opacity-90', 'backdrop-blur', 'shadow', 'text-black');
+          navbar.classList.add('bg-transparent', 'text-white');
+          menuToggle.classList.remove('text-black');
+          menuToggle.classList.add('text-white');
+          logo.src = 'src/img/logoBorderPutih.png';
+        }
+      });
+
+    </script>
   </header>
+
+  <!-- Hero -->
+  <div class="hero min-h-screen" style="background-image: url('/src/img/lobbyRPM.png');">
+    <div class="hero-overlay"></div>
+    <!-- <div class="hero-content text-neutral-content text-center">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+        <p class="mb-5">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </div> -->
+  </div>
+
 
   <!-- Main -->
   <main class="p-6 mt-20">
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    </h1>
+    <h1 class="text-3xl font-bold underline mt-6">
+      Hello world!
+    </h1>
+    </h1>
     <h1 class="text-3xl font-bold underline mt-6">
       Hello world!
     </h1>
@@ -150,20 +208,6 @@
       <p>© 2025 PT. RAISSER PUTRI MANDIRI</p>
     </div>
   </footer>
-
-  <script>
-    const navbar = document.getElementById('navbar');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('bg-opacity-60', 'backdrop-blur');
-      } else {
-        navbar.classList.remove('bg-opacity-60', 'backdrop-blur');
-      }
-    });
-  </script>
-
-
 </body>
 
 </html>
