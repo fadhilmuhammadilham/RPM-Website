@@ -22,12 +22,23 @@
   main {
     flex: 1;
   }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
 </style>
 
-
 <body>
-
-
   <!-- Header -->
   <header>
     <div id="navbar"
@@ -35,22 +46,22 @@
 
       <!-- Logo -->
       <a href="#" class="text-lg font-bold">
-        <img id="navbar-logo" src="src/img/logoTanpaBorder.png" alt="Logo"
-          class="w-24 h-auto ml-20 transition duration-300 ease-in-out" />
+        <img id="navbar-logo" src="src/img/logoBorderPutih.png" alt="Logo"
+          class="w-24 h-auto ml-2 lg:ml-20 transition duration-300 ease-in-out" />
       </a>
 
       <!-- Desktop Menu -->
       <nav class="hidden lg:flex space-x-8 font-medium mr-20">
-        <a href="#" class="hover:text-primary transition">Beranda</a>
+        <a href="#" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Beranda</a>
         <div class="relative group">
-          <button class="hover:text-primary transition">Tentang Kami</button>
+          <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Tentang Kami</button>
           <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-44">
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
           </div>
         </div>
         <div class="relative group">
-          <button class="hover:text-primary transition">Layanan</button>
+          <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Layanan</button>
           <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-64">
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Promotion Support</a>
@@ -58,7 +69,7 @@
             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
           </div>
         </div>
-        <a href="#" class="hover:text-primary transition">Kontak Kami</a>
+        <a href="#" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Kontak Kami</a>
       </nav>
 
       <!-- Mobile menu button -->
@@ -71,44 +82,64 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-white text-black px-6 py-4 space-y-2 shadow">
-      <a href="#" class="block">Beranda</a>
-      <details>
-        <summary class="cursor-pointer">Tentang Kami</summary>
-        <ul class="pl-4 space-y-1">
-          <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Pengalaman Kami</a></li>
-        </ul>
-      </details>
-      <details>
-        <summary class="cursor-pointer">Layanan</summary>
-        <ul class="pl-4 space-y-1">
-          <li><a href="#">Event Organizer</a></li>
-          <li><a href="#">Event Promotion Support</a></li>
-          <li><a href="#">Technical Event Production</a></li>
-          <li><a href="#">Mojivee Kitchen</a></li>
-        </ul>
-      </details>
-      <a href="#" class="block">Kontak Kami</a>
+    <!-- Drawer -->
+    <div id="drawer"
+      class="fixed top-0 right-0 h-full w-64 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 z-50 lg:hidden">
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-lg font-semibold">Menu</h2>
+        <button id="close-drawer" class="text-2xl font-bold">&times;</button>
+      </div>
+      <div class="p-4 space-y-4 w-full">
+        <a href="#" class="block hover:text-cyan-600">Beranda</a>
+        <details>
+          <summary class="cursor-pointer font-medium">Tentang Kami</summary>
+          <ul class="pl-4 space-y-1">
+            <li><a href="#" class="block hover:text-cyan-600">Tentang Kami</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary class="cursor-pointer font-medium">Layanan</summary>
+          <ul class="pl-4 space-y-1">
+            <li><a href="#" class="block hover:text-cyan-600">Event Organizer</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Event Promotion Support</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Technical Event Production</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Mojivee Kitchen</a></li>
+          </ul>
+        </details>
+        <a href="#" class="block hover:text-cyan-600">Kontak Kami</a>
+      </div>
+      <!-- Tombol di bagian paling bawah -->
+      <div class="p-6 border-t">
+        <button class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 rounded">
+          Download Compro
+        </button>
+      </div>
     </div>
+
+
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 lg:hidden"></div>
 
     <script>
       const navbar = document.getElementById('navbar');
       const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('overlay');
+      const closeDrawer = document.getElementById('close-drawer');
       const logo = document.getElementById('navbar-logo');
 
       window.addEventListener('scroll', () => {
         if (window.scrollY > 80) {
-          navbar.classList.add('bg-white', 'bg-opacity-90', 'backdrop-blur', 'shadow', 'text-black');
+          navbar.classList.add('bg-white', 'bg-opacity-30', 'backdrop-blur-md', 'shadow', 'text-black');
           navbar.classList.remove('bg-transparent', 'text-white');
           menuToggle.classList.remove('text-white');
           menuToggle.classList.add('text-black');
           logo.src = 'src/img/logoTanpaBorder.png';
         } else {
-          navbar.classList.remove('bg-white', 'bg-opacity-90', 'backdrop-blur', 'shadow', 'text-black');
+          navbar.classList.remove('bg-white', 'bg-opacity-30', 'backdrop-blur-md', 'shadow', 'text-black');
           navbar.classList.add('bg-transparent', 'text-white');
           menuToggle.classList.remove('text-black');
           menuToggle.classList.add('text-white');
@@ -116,61 +147,59 @@
         }
       });
 
+      // Open drawer
+      menuToggle.addEventListener('click', () => {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      });
+
+      // Close drawer
+      closeDrawer.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      });
+
+      // Close drawer diluarge bisa
+      overlay.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      });
     </script>
   </header>
 
+
+
   <!-- Hero -->
-  <div class="hero min-h-screen" style="background-image: url('/src/img/lobbyRPM.png');">
+  <div class="hero min-h-screen"
+    style="background-image: url('/src/img/lobbyRPM.png'); background-size: cover; background-position: center;">
     <div class="hero-overlay"></div>
-    <!-- <div class="hero-content text-neutral-content text-center">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-        <p class="mb-5">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
-        </p>
-        <button class="btn btn-primary">Get Started</button>
-      </div>
-    </div> -->
   </div>
 
-
   <!-- Main -->
-  <main class="p-6 mt-20">
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
-    </h1>
-    <h1 class="text-3xl font-bold underline mt-6">
-      Hello world!
-    </h1>
+  <main class="p-20 mt-20 rounded-t-2xl flex-1">
+    <section class="overflow-hidden py-8 bg-white shadow-md rounded-3xl">
+      <h2 class="text-2xl font-semibold text-center mb-6">Pelanggan Unggulan</h2>
+      <div class="relative">
+        <div id="slider" class="flex space-x-8 animate-scroll">
+          <!-- logo -->
+          <img src="src/img/logo1.png" alt="logo1" class="h-16 object-contain">
+          <img src="src/img/logo2.png" alt="logo2" class="h-16 object-contain">
+          <img src="src/img/logo3.png" alt="logo3" class="h-16 object-contain">
+          <img src="src/img/logo4.png" alt="logo4" class="h-16 object-contain">
+          <img src="src/img/logo5.png" alt="logo5" class="h-16 object-contain">
+          <img src="src/img/logo6.png" alt="logo6" class="h-16 object-contain">
+          <!-- clone logo -->
+          <img src="src/img/logo1.png" alt="logo1" class="h-16 object-contain">
+          <img src="src/img/logo2.png" alt="logo2" class="h-16 object-contain">
+          <img src="src/img/logo3.png" alt="logo3" class="h-16 object-contain">
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer class="bg-base-100 shadow-sm">
     <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-40 px-5">
-
-      <!-- Logo + Deskripsi -->
       <div class="text-left">
         <a class="btn btn-ghost text-xl opacity-20 mb-4">
           <img src="src/img/logoTanpaBorder.png" alt="Rpm" class="w-32 h-auto">
@@ -180,8 +209,6 @@
           Production House, Sound - Lighting System & Equipment Event Rental's.
         </p>
       </div>
-
-      <!-- Contact -->
       <div class="text-left">
         <h6 class="font-bold mb-2">Contact</h6>
         <p class="text-sm leading-relaxed">
@@ -190,9 +217,7 @@
           KOTA CIMAHI, Kab. Bandung Barat, Jawa Barat 40552
         </p>
       </div>
-
-      <!-- Career -->
-      <div class="text-left bg">
+      <div class="text-left">
         <h6 class="font-bold mb-2">Career</h6>
         <ul class="space-y-1 text-sm">
           <li><a href="https://api.whatsapp.com/send/?phone=6282123333116" target="_blank">+62 821 2333 3116</a></li>
@@ -200,10 +225,7 @@
           <li><a href="https://www.tiktok.com/@rpmevent.official" target="_blank">@rpmevent.official</a></li>
         </ul>
       </div>
-
     </div>
-
-    <!-- Bottom Text -->
     <div class="mt-10 text-center text-sm text-white opacity-20 max-w-screen-xl mx-auto bg-slate-500">
       <p>© 2025 PT. RAISSER PUTRI MANDIRI</p>
     </div>
