@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak Kami</title>
+  <link href="../src/output.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+</style>
+
+<body class="font-[Poppins] bg-white text-black">
+
+  <!-- Header Top -->
+
+  <header>
+    <div id="navbar"
+      class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ease-in-out bg-transparent text-white">
+
+      <!-- Logo -->
+      <a href="#" class="text-lg font-bold">
+        <img id="navbar-logo" src="src/img/logoBorderPutih.png" alt="Logo"
+          class="w-24 h-auto ml-2 lg:ml-20 transition duration-300 ease-in-out" />
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex space-x-8 font-medium mr-20">
+        <a href="#" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Beranda</a>
+        <div class="relative group">
+          <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Tentang Kami</button>
+          <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-44">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Layanan</button>
+          <div class="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg py-2 w-64">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Promotion Support</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Technical Event Production</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
+          </div>
+        </div>
+        <a href="#" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Kontak Kami</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white transition-colors duration-300 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer -->
+    <div id="drawer"
+      class="fixed top-0 right-0 h-full w-64 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 z-50 lg:hidden">
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-lg font-semibold">Menu</h2>
+        <button id="close-drawer" class="text-2xl font-bold">&times;</button>
+      </div>
+      <div class="p-4 space-y-4 w-full">
+        <a href="#" class="block hover:text-cyan-600">Beranda</a>
+        <details>
+          <summary class="cursor-pointer font-medium">Tentang Kami</summary>
+          <ul class="pl-4 space-y-1">
+            <li><a href="#" class="block hover:text-cyan-600">Tentang Kami</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary class="cursor-pointer font-medium">Layanan</summary>
+          <ul class="pl-4 space-y-1">
+            <li><a href="#" class="block hover:text-cyan-600">Event Organizer</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Event Promotion Support</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Technical Event Production</a></li>
+            <li><a href="#" class="block hover:text-cyan-600">Mojivee Kitchen</a></li>
+          </ul>
+        </details>
+        <a href="#" class="block hover:text-cyan-600">Kontak Kami</a>
+      </div>
+      <!-- Tombol di bagian paling bawah -->
+      <div class="p-6 border-t">
+        <button class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 rounded">
+          Download Compro
+        </button>
+      </div>
+    </div>
+
+
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 lg:hidden"></div>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('overlay');
+      const closeDrawer = document.getElementById('close-drawer');
+      const logo = document.getElementById('navbar-logo');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+          navbar.classList.add('bg-white', 'bg-opacity-30', 'backdrop-blur-md', 'shadow', 'text-black');
+          navbar.classList.remove('bg-transparent', 'text-white');
+          menuToggle.classList.remove('text-white');
+          menuToggle.classList.add('text-black');
+          logo.src = 'src/img/logoTanpaBorder.png';
+        } else {
+          navbar.classList.remove('bg-white', 'bg-opacity-30', 'backdrop-blur-md', 'shadow', 'text-black');
+          navbar.classList.add('bg-transparent', 'text-white');
+          menuToggle.classList.remove('text-black');
+          menuToggle.classList.add('text-white');
+          logo.src = 'src/img/logoBorderPutih.png';
+        }
+      });
+
+      // Open drawer
+      menuToggle.addEventListener('click', () => {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      });
+
+      // Close drawer
+      closeDrawer.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      });
+
+      // Close drawer diluarge bisa
+      overlay.addEventListener('click', () => {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      });
+    </script>
+  </header>
+
+  <!-- Hero Section -->
+
+  <div class="hero min-h-screen" style="min-height: 100vh; background-image: url('/src/img/lobbyRPM.png'); background-size: cover; background-position: center;">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="py-16">
+    <div class="max-w-screen-xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Marketing Office -->
+        <div>
+          <h2 class="text-gray-600 text-sm">Alamat Kami</h2>
+          <h3 class="text-2xl font-bold mb-6 border-b-4 border-yellow-400 inline-block">Marketing Office</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <img src="src/img/icon-alamat.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">Alamat</h4>
+                <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 border-t pt-4">
+              <img src="src/img/icon-phone.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">No Handphone</h4>
+                <p class="text-sm text-gray-600">+62 877-3034-1110</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 border-t pt-4">
+              <img src="src/img/icon-email.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Head Office -->
+        <div>
+          <h2 class="text-gray-600 text-sm">Alamat Kami</h2>
+          <h3 class="text-2xl font-bold mb-6 border-b-4 border-yellow-400 inline-block">Head Office</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <img src="src/img/icon-alamat.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">Alamat</h4>
+                <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 border-t pt-4">
+              <img src="src/img/icon-phone.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">No Handphone</h4>
+                <p class="text-sm text-gray-600">+62 877-3034-1110</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 border-t pt-4">
+              <img src="src/img/icon-email.png" class="w-10 h-10 border-2 border-yellow-400 rounded-full p-1" />
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="mt-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.9606451358873!2d107.52339760428048!3d-6.871840066767239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e500115e7bdb%3A0x5d2d991450d879c!2sRPM%20Production%20House%20(PT.Raisser%20Putri%20Mandiri)!5e0!3m2!1sid!2sid!4v1752074492481!5m2!1sid!2sid" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-base-100 shadow-sm">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-40 px-5">
+      <div class="text-left">
+        <a class="btn btn-ghost text-xl opacity-20 mb-4">
+          <img src="src/img/logoTanpaBorder.png" alt="Rpm" class="w-32 h-auto">
+        </a>
+        <p class="text-sm leading-relaxed">
+          PT. RAISSER PUTRI MANDIRI adalah sebuah perusahaan Jasa Event Organizer, Event Contractor, <br>
+          Production House, Sound - Lighting System & Equipment Event Rental's.
+        </p>
+      </div>
+      <div class="text-left">
+        <h6 class="font-bold mb-2">Contact</h6>
+        <p class="text-sm leading-relaxed">
+          Komplek Padasuka Indah Jl. Nusantara 2.C.45 RT.02/RW.09 <br>
+          Gadobangkong, Kec. Ngamprah <br>
+          KOTA CIMAHI, Kab. Bandung Barat, Jawa Barat 40552
+        </p>
+      </div>
+      <div class="text-left">
+        <h6 class="font-bold mb-2">Career</h6>
+        <ul class="space-y-1 text-sm">
+          <li><a href="https://api.whatsapp.com/send/?phone=6282123333116" target="_blank">+62 821 2333 3116</a></li>
+          <li><a href="https://www.instagram.com/rpmevent.official/" target="_blank">@rpmevent.official</a></li>
+          <li><a href="https://www.tiktok.com/@rpmevent.official" target="_blank">@rpmevent.official</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-sm text-white opacity-20 max-w-screen-xl mx-auto bg-slate-500">
+      <p>© 2025 PT. RAISSER PUTRI MANDIRI</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
