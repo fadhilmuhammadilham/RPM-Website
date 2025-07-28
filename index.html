@@ -59,7 +59,8 @@
         <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Tentang Kami</button>
         <div
           class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 bg-white text-black rounded shadow-lg py-2 w-44 z-50">
-          <a href="pages/about_us.html" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
+          <a href="pages/AboutUs.html" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tim Kami</a>
           <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
         </div>
       </div>
@@ -69,9 +70,9 @@
         <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Layanan</button>
         <div
           class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 bg-white text-black rounded shadow-lg py-2 w-64 z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Event Promotion Support</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Technical Event Production</a>
+          <a href="pages/EventOrganizer.html" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
+          <a href="pages/EventPromotionSupport.html" class="block px-4 py-2 hover:bg-gray-100">Event Promotion Support</a>
+          <a href="pages/TechnicalEventProduction.html" class="block px-4 py-2 hover:bg-gray-100">Technical Event Production</a>
           <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
         </div>
       </div>
@@ -102,16 +103,17 @@
       <details>
         <summary class="cursor-pointer font-medium">Tentang Kami</summary>
         <ul class="pl-4 space-y-1">
-          <li><a href="pages/about_us.html" class="block hover:text-cyan-600">Tentang Kami</a></li>
+          <li><a href="pages/AboutUs.html" class="block hover:text-cyan-600">Tentang Kami</a></li>
+          <li><a href="#" class="block hover:text-cyan-600">Tim kami</a></li>
           <li><a href="#" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
         </ul>
       </details>
       <details>
         <summary class="cursor-pointer font-medium">Layanan</summary>
         <ul class="pl-4 space-y-1">
-          <li><a href="#" class="block hover:text-cyan-600">Event Organizer</a></li>
-          <li><a href="#" class="block hover:text-cyan-600">Event Promotion Support</a></li>
-          <li><a href="#" class="block hover:text-cyan-600">Technical Event Production</a></li>
+          <li><a href="pages/EventOrganizer.html" class="block hover:text-cyan-600">Event Organizer</a></li>
+          <li><a href="pages/EventPromotionSupport.html" class="block hover:text-cyan-600">Event Promotion Support</a></li>
+          <li><a href="pages/TechnicalEventProduction.html" class="block hover:text-cyan-600">Technical Event Production</a></li>
           <li><a href="#" class="block hover:text-cyan-600">Mojivee Kitchen</a></li>
         </ul>
       </details>
@@ -177,7 +179,7 @@
 
   <!-- Hero -->
   <div class="hero min-h-screen"
-    style="min-height: 100vh; background-image: url('/src/img/lobbyRPM.png'); background-size: cover; background-position: center;">
+    style="min-height: 100vh; background-image: url('src/img/lobbyRPM.png'); background-size: cover; background-position: center;">
     <div class="hero-overlay"></div>
   </div>
 
@@ -213,38 +215,64 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-base-100 shadow-sm">
-    <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-40 px-5">
-      <div class="text-left">
-        <a class="btn btn-ghost text-xl opacity-20 mb-4">
-          <img src="src/img/logoTanpaBorder.png" alt="Rpm" class="w-32 h-auto">
-        </a>
-        <p class="text-sm leading-relaxed">
-          PT. RAISSER PUTRI MANDIRI adalah sebuah perusahaan Jasa Event Organizer, Event Contractor, <br>
-          Production House, Sound - Lighting System & Equipment Event Rental's.
-        </p>
-      </div>
-      <div class="text-left">
-        <h6 class="font-bold mb-2">Contact</h6>
-        <p class="text-sm leading-relaxed">
-          Komplek Padasuka Indah Jl. Nusantara 2.C.45 RT.02/RW.09 <br>
-          Gadobangkong, Kec. Ngamprah <br>
-          KOTA CIMAHI, Kab. Bandung Barat, Jawa Barat 40552
-        </p>
-      </div>
-      <div class="text-left">
-        <h6 class="font-bold mb-2">Career</h6>
-        <ul class="space-y-1 text-sm">
-          <li><a href="https://api.whatsapp.com/send/?phone=6282123333116" target="_blank">+62 821 2333 3116</a></li>
-          <li><a href="https://www.instagram.com/rpmevent.official/" target="_blank">@rpmevent.official</a></li>
-          <li><a href="https://www.tiktok.com/@rpmevent.official" target="_blank">@rpmevent.official</a></li>
-        </ul>
-      </div>
+  <footer class="bg-gray-900 text-white text-xs sm:text-sm">
+  <div class="grid grid-cols-4 gap-3 px-2 py-6 sm:gap-6 sm:px-8 sm:py-10">
+
+    <!-- Logo & About -->
+    <div>
+      <a class="block mb-3">
+        <img src="src/img/logoTanpaBorder.png" alt="RPM Logo" class="w-24 sm:w-32 h-auto">
+      </a>
+      <p class="leading-relaxed text-[10px] sm:text-xs">
+        PT. RAISSER PUTRI MANDIRI adalah sebuah perusahaan Jasa Event Organizer, Event Contractor,
+        Production House, Sound - Lighting System & Equipment Event Rental's.
+      </p>
     </div>
-    <div class="mt-10 text-center text-sm text-white opacity-20 max-w-screen-xl mx-auto bg-slate-500">
-      <p>© 2025 PT. RAISSER PUTRI MANDIRI</p>
+
+    <!-- Alamat -->
+    <div>
+      <h6 class="font-bold mb-2 text-sm">Alamat</h6>
+      <p class="leading-relaxed text-[10px] sm:text-xs">
+        Komplek Padasuka Indah Jl. Nusantara 2.C.45 RT.02/RW.09 <br>
+        Gadobangkong, Kec. Ngamprah <br>
+        KOTA CIMAHI, Kab. Bandung Barat, Jawa Barat 40552
+      </p>
     </div>
-  </footer>
+
+    <!-- Sosial Media -->
+    <div>
+      <h6 class="font-bold mb-2 text-sm">Sosial Media</h6>
+      <ul class="space-y-1 text-[10px] sm:text-xs">
+        <li><a href="https://api.whatsapp.com/send/?phone=6282123333116" target="_blank">+62 821 2333 3116</a></li>
+        <li><a href="https://www.instagram.com/rpmevent.official/" target="_blank">@rpmevent.official</a></li>
+        <li><a href="https://www.tiktok.com/@rpmevent.official" target="_blank">@rpmevent.official</a></li>
+      </ul>
+    </div>
+
+    <!-- Karier -->
+    <div>
+      <h6 class="font-bold mb-2 text-sm">Karier</h6>
+      <ul class="space-y-1 text-[10px] sm:text-xs">
+        <li><a href="mailto:info@rpmevent.id">info@rpmevent.id</a></li>
+        <li><a href="https://rpmevent.id/career" target="_blank">Lihat Lowongan</a></li>
+        <li><a href="/rpm-profile.pdf" download>Download Profil (PDF)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="bg-gray-800 text-center py-3 text-[10px] sm:text-sm text-white/60">
+    © 2025 PT. RAISSER PUTRI MANDIRI. All rights reserved.
+  </div>
+</footer>
+
+
+
+
+
+
+
 </body>
 
 </html>
