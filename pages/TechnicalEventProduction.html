@@ -44,7 +44,7 @@
         display: flex;
         align-items: center;
         padding: 0.75rem 1rem;
-        border: 1px solid #1e3a8a;
+        border: 1px solid #5399a3;
         font-weight: 500;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -61,7 +61,7 @@
         left: 0;
         height: 100%;
         width: 0%;
-        background-color: #1e3a8a;
+        background-color: #5399a3;
         z-index: -1;
         /* ⬅️ Ini penting */
         transition: width 0.3s ease-in-out;
@@ -82,7 +82,7 @@
     }
 
     .menu-item.active {
-        background-color: #1e3a8a;
+        background-color: #5399a3;
         color: white;
         font-weight: 600;
     }
@@ -130,7 +130,7 @@
                             Support</a>
                         <a href="TechnicalEventProduction.html" class="block px-4 py-2 hover:bg-gray-100">Technical
                             Event Production</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
+                        <a href="MojiveeKitchen.html" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
                     </div>
                 </div>
 
@@ -173,7 +173,7 @@
                                 Support</a></li>
                         <li><a href="TechnicalEventProduction.html" class="block hover:text-cyan-600">Technical Event
                                 Production</a></li>
-                        <li><a href="#" class="block hover:text-cyan-600">Mojivee Kitchen</a></li>
+                        <li><a href="MojiveeKitchen.html" class="block hover:text-cyan-600">Mojivee Kitchen</a></li>
                     </ul>
                 </details>
                 <a href="contact.html" class="block hover:text-cyan-600">Kontak Kami</a>
@@ -294,32 +294,48 @@
 
                 <!-- Card Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                    <div class="rounded-xl shadow-md p-6 border text-center">
-                        <h5 class="text-lg font-semibold text-cyan-700">Audio, Visual and Lighting Equipment</h5>
+                    <div
+                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
+                            Audio, Visual and Lighting Equipment
+                        </h5>
                     </div>
-                    <div class="rounded-xl shadow-md p-6 border text-center">
-                        <h5 class="text-lg font-semibold text-cyan-700">Multimedia Broadcasting System</h5>
+                    <div
+                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
+                            Multimedia Broadcasting System
+                        </h5>
                     </div>
-                    <div class="rounded-xl shadow-md p-6 border text-center">
-                        <h5 class="text-lg font-semibold text-cyan-700">Exhibition Construction and Equipment</h5>
+                    <div
+                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
+                            Exhibition Construction and Equipment
+                        </h5>
                     </div>
-                    <div class="rounded-xl shadow-md p-6 border text-center">
-                        <h5 class="text-lg font-semibold text-cyan-700">Stage Construction and Equipment</h5>
+                    <div
+                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
+                            Stage Construction and Equipment
+                        </h5>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <!-- layanan lain -->
         <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center gap-10">
 
-            <!-- sidebar menu-->
-            <div class="w-80 bg-white shadow-md p-4 mx-10">
-                <div class="space-y-2">
-                    <a href="EventOrganizer.html" class="menu-item">EVENT ORGANIZER</a>
-                    <a href="EventPromotionSupport.html" class="menu-item">EVENT PROMOTION SUPPORT</a>
-                    <a href="TechnicalEventProduction.html" class="menu-item active">TECHNICAL EVENT PRODUCTION</a>
-                    <a href="#" class="menu-item">MOJIVEE KITCHEN</a>
+            <div>
+                <p class="text-xl font-bold text-slate-600 mb-4 p-4 mx-10">layanan lainnya :</p>
+                <!-- sidebar menu-->
+                <div class="w-80 bg-white shadow-md p-4 mx-10">
+                    <div class="space-y-2">
+                        <a href="EventOrganizer.html" class="menu-item">EVENT ORGANIZER</a>
+                        <a href="EventPromotionSupport.html" class="menu-item">EVENT PROMOTION SUPPORT</a>
+                        <a href="TechnicalEventProduction.html" class="menu-item active">TECHNICAL EVENT PRODUCTION</a>
+                        <a href="MojiveeKitchen.html" class="menu-item">MOJIVEE KITCHEN</a>
+                    </div>
                 </div>
             </div>
 
@@ -352,7 +368,7 @@
                             <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4 mt-1" alt="icon">
                             <div>
                                 <div class="text-xl font-semibold text-gray-800">MICE</div>
-                                <p class="text-sm text-gray-600">Meetings, Incentives, Conferences, and Exhibitions
+                                <p class="text-sm text-slate-600">Meetings, Incentives, Conferences, and Exhibitions
                                 </p>
                             </div>
                         </div>
@@ -384,7 +400,7 @@
                             <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4 mt-1" alt="icon">
                             <div>
                                 <div class="text-xl font-semibold text-gray-800">CUSTOMER SUPPORT</div>
-                                <p class="text-sm text-gray-600">Additional service for event organizer</p>
+                                <p class="text-sm text-slate-600">Additional service for event organizer</p>
                             </div>
                         </div>
                     </div>
