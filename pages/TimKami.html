@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technical Event Production</title>
+    <title>PengalamanKami</title>
     <link href="../src/output.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
@@ -24,6 +24,7 @@
         flex: 1;
     }
 
+
     @keyframes scroll {
         0% {
             transform: translateX(0);
@@ -37,57 +38,7 @@
     .animate-scroll {
         animation: scroll 30s linear infinite;
     }
-
-    /* Hover Effect Slide-in Menu */
-    .menu-item {
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: 0.75rem 1rem;
-        border: 1px solid #5399a3;
-        font-weight: 500;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        background-color: white;
-        color: gray-800;
-        z-index: 1;
-    }
-
-    .menu-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0%;
-        background-color: #5399a3;
-        z-index: -1;
-        /* ⬅️ Ini penting */
-        transition: width 0.3s ease-in-out;
-    }
-
-    .menu-item:hover::before {
-        width: 100%;
-    }
-
-    .menu-item:hover {
-        color: white;
-    }
-
-    .menu-item>* {
-        position: relative;
-        z-index: 1;
-        /* ⬅️ Pastikan konten berada di atas ::before */
-    }
-
-    .menu-item.active {
-        background-color: #5399a3;
-        color: white;
-        font-weight: 600;
-    }
 </style>
-
 
 <body class="font-[Poppins] bg-white text-black">
 
@@ -161,7 +112,7 @@
                     <summary class="cursor-pointer font-medium">Tentang Kami</summary>
                     <ul class="pl-4 space-y-1">
                         <li><a href="AboutUs.html" class="block hover:text-cyan-600">Tentang Kami</a></li>
-                        <li><a href="TimKami.html" class="block hover:text-cyan-600">Tim Kami</a></li>
+                        <li><a href="TimKami.html" class="block hover:text-cyan-600">Tim kami</a></li>
                         <li><a href="PengalamanKami.html" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
                     </ul>
                 </details>
@@ -245,7 +196,7 @@
 
         <!-- Konten Tengah -->
         <div class="text-center text-white z-10 flex flex-col items-center justify-center w-full h-full">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Layanan</h1>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Tentang Kami</h1>
             <p class="mt-2 text-lg md:text-xl flex items-center justify-center gap-2 text-white/70">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                     class="bi bi-house-door" viewBox="0 0 16 16">
@@ -254,161 +205,169 @@
                 </svg>
                 <span>Beranda</span>
                 <span>›</span>
-                <span class="font-semibold text-white/90">Technical Event Production</span>
+                <span class="font-semibold text-white/90">Tim Kami</span>
             </p>
         </div>
     </div>
 
-
     <!-- Main Content -->
-    <section class="py-16 bg-white">
-        <!-- Tombol WhatsApp -->
-        <a href="https://api.whatsapp.com/send?phone=6282123333116" target="_blank" rel="noopener noreferrer"
-            class="fixed bottom-4 right-4 z-[9999] inline-flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:bg-[#128C7E] transition-colors">
-            <div class="absolute inset-0 rounded-full bg-[#25D366] animate-ping"></div>
-            <div class="relative z-10 w-1/2 h-1/2 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="w-max" height="h-auto" fill="currentColor"
-                    class="bi bi-whatsapp" viewBox="0 0 16 16">
-                    <path
-                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                </svg>
-            </div>
-        </a>
-
-        <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center gap-10 mb-10">
-            <!-- Gambar Ilustrasi -->
-            <div class="md:w-1/3 flex justify-center">
-                <img src="/src/img/undraw_technical event.png" alt="Technical Event Illustration"
-                    class="w-64 md:w-80 h-auto" />
-            </div>
-
-            <!-- Konten Teks -->
-            <div class="md:w-2/3">
-                <h1 class="text-2xl font-bold text-cyan-700 mb-4">TECHNICAL EVENT PRODUCTION</h1>
-                <p class="mb-4 text-sm md:text-base">
-                    Kami menyediakan layanan penyelenggaraan acara secara menyeluruh, mulai dari tahap perencanaan
-                    hingga eksekusi...
-                </p>
-
-                <h4 class="font-bold mb-4">Layanan ini meliputi:</h4>
-
-                <!-- Card Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                    <div
-                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
-                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
-                            Audio, Visual and Lighting Equipment
-                        </h5>
-                    </div>
-                    <div
-                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
-                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
-                            Multimedia Broadcasting System
-                        </h5>
-                    </div>
-                    <div
-                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
-                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
-                            Exhibition Construction and Equipment
-                        </h5>
-                    </div>
-                    <div
-                        class="group rounded-xl shadow-md p-6 border text-center flex items-center justify-center transition duration-300 hover:bg-cyan-700 hover:text-white hover:shadow-lg hover:scale-105 hover:-translate-y-1">
-                        <h5 class="text-lg font-semibold text-cyan-700 group-hover:text-white transition">
-                            Stage Construction and Equipment
-                        </h5>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- layanan lain -->
-        <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center gap-10">
-
-            <div>
-                <p class="text-xl font-bold text-slate-600 mb-4 p-4 mx-10">layanan lainnya :</p>
-                <!-- sidebar menu-->
-                <div class="w-80 bg-white shadow-md p-4 mx-10">
-                    <div class="space-y-2">
-                        <a href="EventOrganizer.html" class="menu-item">EVENT ORGANIZER</a>
-                        <a href="EventPromotionSupport.html" class="menu-item">EVENT PROMOTION SUPPORT</a>
-                        <a href="TechnicalEventProduction.html" class="menu-item active">TECHNICAL EVENT PRODUCTION</a>
-                        <a href="MojiveeKitchen.html" class="menu-item">MOJIVEE KITCHEN</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-flow-col">
-                <p>Selain layanan di atas, <strong>RPM</strong> juga menyediakan layanan:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Kolom kiri -->
-                    <div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/4.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">WEDDING EVENT</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">MUSIC CONCERT</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">ADVERTISING</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">DESIGN GRAFIS 2D/3D</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">TEAM BUILDING OUTBOUND</div>
-                        </div>
-                        <div class="flex items-start border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4 mt-1" alt="icon">
-                            <div>
-                                <div class="text-xl font-semibold text-gray-800">MICE</div>
-                                <p class="text-sm text-slate-600">Meetings, Incentives, Conferences, and Exhibitions
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kolom kanan -->
-                    <div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">EVENT CARNAVAL</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">EVENT FESTIVAL</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">EXPO & BAZAR</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">MULTIMEDIA & ANIMASI</div>
-                        </div>
-                        <div class="flex items-center border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4" alt="icon">
-                            <div class="text-xl font-semibold text-gray-800">TALENT & ARTIST MANAGEMENT</div>
-                        </div>
-                        <div class="flex items-start border-b py-2 mb-2">
-                            <img src="/src/img/icon/1.png" class="h-12 w-12 mr-4 mt-1" alt="icon">
-                            <div>
-                                <div class="text-xl font-semibold text-gray-800">CUSTOMER SUPPORT</div>
-                                <p class="text-sm text-slate-600">Additional service for event organizer</p>
-                            </div>
-                        </div>
-                    </div>
+    <main class="py-6 my-10 ml-20 mr-20">
+        <!-- CEO -->
+        <div class="bg-white flex flex-col items-center justify-center py-4">
+            <h3 class="text-2xl font-bold text-cyan-700 mb-6 border-b-4 pb-2">CEO RPM</h3>
+            <div class="bg-white flex flex-col items-center justify-center pb-2 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Shelpy_putri.png" alt="CEO"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">SHELPY PUTRI BUDI ARTINA, S.E</span>
+                    <p class="text-neutral-500">CEO RPM</p>
                 </div>
             </div>
         </div>
 
-    </section>
+
+        <!-- CREW TITLE -->
+        <div class="bg-white flex flex-col items-center justify-center py-6">
+            <h3 class="text-2xl font-bold text-cyan-700 mb-2 border-b-4 pb-2">CREW RPM</h3>
+        </div>
+
+        <!-- CREW -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 px-10 mb-4">
+            <!-- ANGGOTA 1 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Rohmat.png" alt="ROHMAT"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ROHMAT</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 2 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Ananda_Farhan.png" alt="ANANDA FARHAN"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ANANDA FARHAN</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 3 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Dika.png" alt="DIKA"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">DIKA</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 4 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Ilham.png" alt="ILHAM"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ILHAM</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 5 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/VIE.png" alt="VIE"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">VIE</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 6 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Naufal.png" alt="NAUFAL"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">NAUFAL</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 7 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/Dwi.png" alt="DWI"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">DWI</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 8 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/RIzal.png" alt="RIZAL"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">RIZAL</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 9 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/DERA.png" alt="DERA"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">DERA</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 10 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/USER.jpg" alt="ANGGOTA 10"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ANGGOTA 10</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 11 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/USER.jpg" alt="ANGGOTA 11"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ANGGOTA 11</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+            <!-- ANGGOTA 12 -->
+            <div
+                class="bg-white flex flex-col items-center justify-center py-4 border rounded-lg shadow transition-transform duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
+                <img src="/src/img/fototim/USER.jpg" alt="ANGGOTA 12"
+                    class="w-72 rounded-lg border shadow h-80 object-cover transition duration-300">
+                <div class="bg-white flex flex-col items-center border shadow justify-center px-4 mt-2">
+                    <span class="font-bold">ANGGOTA 12</span>
+                    <p class="text-neutral-500">CREW</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
 
 
     <!-- Footer -->
@@ -422,9 +381,7 @@
                         <img src="../src/img/logoTanpaBorder.png" alt="RPM Logo" class="w-24 sm:w-32 h-auto">
                     </a>
                     <p class="leading-relaxed text-[10px] sm:text-xs">
-                        PT. RAISSER PUTRI MANDIRI adalah sebuah perusahaan Jasa Event Organizer,
-                        Event
-                        Contractor,
+                        PT. RAISSER PUTRI MANDIRI adalah sebuah perusahaan Jasa Event Organizer, Event Contractor,
                         Production House, Sound - Lighting System & Equipment Event Rental's.
                     </p>
                 </div>
@@ -490,6 +447,7 @@
             © 2025 PT. RAISSER PUTRI MANDIRI. All rights reserved.
         </div>
     </footer>
+
 </body>
 
 </html>
