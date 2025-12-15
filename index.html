@@ -46,12 +46,27 @@
     scrollbar-width: none;
   }
 
-  .product-card {
-    background: white;
-    border-radius: 1rem;
-    padding: 1.25rem;
-    flex: 0 0 calc(100% / 3 - 1rem);
-  }
+ .product-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  flex: 0 0 calc(100% / 3 - 1rem);
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform, box-shadow;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
 
   @media (max-width: 1024px) {
     .product-card {
@@ -88,9 +103,9 @@
             Kami</button>
           <div
             class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 bg-white text-black rounded shadow-lg py-2 w-44 z-50">
-            <a href="AboutUs.html" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
-            <a href="TimKami.html" class="block px-4 py-2 hover:bg-gray-100">Tim Kami</a>
-            <a href="PengalamanKami.html" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
+            <a href="/pages/AboutUs.html" class="block px-4 py-2 hover:bg-gray-100">Tentang Kami</a>
+            <a href="/pages/TimKami.html" class="block px-4 py-2 hover:bg-gray-100">Tim Kami</a>
+            <a href="/pages/PengalamanKami.html" class="block px-4 py-2 hover:bg-gray-100">Pengalaman Kami</a>
           </div>
         </div>
 
@@ -99,17 +114,17 @@
           <button class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Layanan</button>
           <div
             class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 bg-white text-black rounded shadow-lg py-2 w-64 z-50">
-            <a href="EventOrganizer.html" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
-            <a href="EventPromotionSupport.html" class="block px-4 py-2 hover:bg-gray-100">Event Promotion
+            <a href="/pages/EventOrganizer.html" class="block px-4 py-2 hover:bg-gray-100">Event Organizer</a>
+            <a href="/pages/EventPromotionSupport.html" class="block px-4 py-2 hover:bg-gray-100">Event Promotion
 
               Support</a>
-            <a href="TechnicalEventProduction.html" class="block px-4 py-2 hover:bg-gray-100">Technical
+            <a href="/pages/TechnicalEventProduction.html" class="block px-4 py-2 hover:bg-gray-100">Technical
               Event Production</a>
-            <a href="MojiveeKitchen.html" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
+            <a href="/pages/MojiveeKitchen.html" class="block px-4 py-2 hover:bg-gray-100">Mojivee Kitchen</a>
           </div>
         </div>
 
-        <a href="contact.html" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Kontak
+        <a href="pages/contact.html" class="hover:text-cyan-600 hover:font-semibold hover:underline transition">Kontak
           Kami</a>
       </nav>
 
@@ -135,9 +150,9 @@
         <details>
           <summary class="cursor-pointer font-medium">Tentang Kami</summary>
           <ul class="pl-4 space-y-1">
-            <li><a href="AboutUs.html" class="block hover:text-cyan-600">Tentang Kami</a></li>
-            <li><a href="TimKami.html" class="block hover:text-cyan-600">Tim kami</a></li>
-            <li><a href="PengalamanKami.html" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
+            <li><a href="/pages/AboutUs.html" class="block hover:text-cyan-600">Tentang Kami</a></li>
+            <li><a href="/pages/TimKami.html" class="block hover:text-cyan-600">Tim kami</a></li>
+            <li><a href="/pages/PengalamanKami.html" class="block hover:text-cyan-600">Pengalaman Kami</a></li>
           </ul>
         </details>
         <details>
@@ -221,7 +236,7 @@
     <!-- Konten Tengah -->
     <div class="text-center text-white z-10 flex flex-col items-center justify-center w-full h-full">
       <p class="text-lg text-white/90 font-semibold">
-        WELCOME TO
+        SELAMAT DATANG
       </p>
       <h1 class="text-8xl lg:text-5xl font-extrabold text-white">
         RPM Event Organizer
@@ -263,7 +278,7 @@
 
         <!-- Content -->
         <div class="bg-[#3b7f83] text-white p-10 rounded-2xl">
-          <h3 class="text-sm uppercase tracking-wide mb-2">About Us</h3>
+          <h3 class="text-sm uppercase tracking-wide mb-2">Tentang Kami</h3>
           <h2 class="text-3xl font-bold mb-4">
             Profesional Event Organizer & Production
           </h2>
@@ -287,7 +302,7 @@
 
         <!-- KIRI (1/4) -->
         <div>
-          <h2 class="text-4xl font-bold mb-4 text-white">Our Product</h2>
+          <h2 class="text-4xl font-bold mb-4 text-white">Produk Kami</h2>
           <p class="text-white">
             Kategori peralatan event profesional yang kami sediakan untuk mendukung
             berbagai jenis acara, mulai dari event indoor hingga outdoor, skala kecil
@@ -310,57 +325,68 @@
 
               <!-- Sound System -->
               <div class="product-card">
-                <img src="src/img/product-lighting.jpg" alt="Sound-System" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-3">Sound System</h3>
-                <p class="text-gray-600 mb-3 text-xs">
-                  Audio berkualitas tinggi yang dirancang untuk menghasilkan suara jernih
-                  dan stabil pada berbagai skala event indoor maupun outdoor.
-                </p>
-                <a href="#" class="inline-block text-sm font-semibold text-cyan-700 hover:underline">
-                  Lihat Selengkapnya →
-                </a>
+              <img src="src/img/product-sound.jpg" alt="Sound" class="w-full h-40 object-cover rounded-lg mb-4">
+
+              <h3 class="text-xl font-semibold my-3">Sound System</h3>
+
+              <p class="text-gray-600 text-xs my-2">
+                Audio berkualitas tinggi yang dirancang untuk menghasilkan suara jernih
+                dan stabil pada berbagai skala event indoor maupun outdoor.
+              </p>
+
+              <a href="#" class="mt-auto text-sm font-semibold text-cyan-700 hover:underline">
+                Lihat Selengkapnya →
+              </a>
               </div>
 
               <!-- Lighting -->
               <div class="product-card">
-                <img src="src/img/product-sound.jpg" alt="Lighting"
-                  class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-3">Lighting</h3>
-                <p class="text-gray-600 mb-3 text-xs">
-                  Sistem pencahayaan profesional untuk menciptakan suasana event yang
+              <img src="src/img/product-lighting.jpg" alt="lighting" class="w-full h-40 object-cover rounded-lg mb-4">
+
+              <h3 class="text-xl font-semibold my-3">Lighting</h3>
+
+              <p class="text-gray-600 text-xs my-2">
+                Sistem pencahayaan profesional untuk menciptakan suasana event yang
                   menarik, dramatis, dan sesuai dengan konsep acara Anda.
-                </p>
-                <a href="#" class="inline-block text-sm font-semibold text-cyan-700 hover:underline">
-                  Lihat Selengkapnya →
-                </a>
+              </p>
+
+              <a href="#" class="mt-auto text-sm font-semibold text-cyan-700 hover:underline">
+                Lihat Selengkapnya →
+              </a>
               </div>
 
               <!-- Tenda -->
               <div class="product-card">
-                <img src="src/img/product-led.jpg" alt="Tenda" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-3">Tenda</h3>
-                <p class="text-gray-600 mb-3 text-xs">
-                  Berbagai pilihan tenda event yang kokoh dan rapi untuk mendukung
+              <img src="src/img/product-tenda.jpg" alt="tenda" class="w-full h-40 object-cover rounded-lg mb-4">
+
+              <h3 class="text-xl font-semibold my-3">Tenda</h3>
+
+              <p class="text-gray-600 text-xs my-2">
+                Berbagai pilihan tenda event yang kokoh dan rapi untuk mendukung
                   kenyamanan tamu pada acara indoor maupun outdoor.
-                </p>
-                <a href="#" class="inline-block text-sm font-semibold text-cyan-700 hover:underline">
-                  Lihat Selengkapnya →
-                </a>
+              </p>
+
+              <a href="#" class="mt-auto text-sm font-semibold text-cyan-700 hover:underline">
+                Lihat Selengkapnya →
+              </a>
               </div>
 
               <!-- Kursi & Meja -->
               <div class="product-card">
-                <img src="src/img/product-rigging.jpg" alt="Kursi&Meja" class="w-full h-40 object-cover rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-3">Kursi & Meja</h3>
-                <p class="text-gray-600 mb-3 text-xs">
-                  Perlengkapan kursi dan meja event dengan tampilan rapi dan nyaman,
-                  cocok untuk berbagai konsep acara formal maupun nonformal.
-                </p>
-                <a href="#" class="inline-block text-sm font-semibold text-cyan-700 hover:underline">
-                  Lihat Selengkapnya →
-                </a>
-              </div>
+              <img src="src/img/product-kursimeja.jpg" alt="KursiMeja" class="w-full h-40 object-cover rounded-lg mb-4">
 
+              <h3 class="text-xl font-semibold my-3">Kursi & Meja</h3>
+
+              <p class="text-gray-600 text-xs my-2">
+                Perlengkapan kursi dan meja event dengan tampilan rapi dan nyaman,
+                  cocok untuk berbagai konsep acara formal maupun nonformal.
+              </p>
+
+              <a href="#" class="mt-auto text-sm font-semibold text-cyan-700 hover:underline">
+                Lihat Selengkapnya →
+              </a>
+              
+              </div>
             </div>
           </div>
 
@@ -374,9 +400,53 @@
       </div>
     </section>
 
+    <!-- Visi Misi -->
+    <section class="bg-white pt-12 pb-12 -mx-6 md:-mx-8 lg:-mx-20">
+  <div class="max-w-7xl mx-auto px-6 text-gray-800">
+
+    <h2 class="text-center text-3xl font-bold mb-12">
+      Visi & Misi
+    </h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-14">
+
+      <!-- visi -->
+      <div class="p-6 rounded-2xl bg-gray-50 text-center hover:shadow-md transition">
+        <div class="text-blue-400 text-3xl mb-4">👁️</div>
+        <h3 class="text-lg font-semibold mb-2">VISION</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Menjadi perusahaan event profesional yang mengutamakan kualitas,
+          kenyamanan, dan kepuasan klien.
+        </p>
+      </div>
+
+      <!-- misi -->
+      <div class="p-6 rounded-2xl bg-gray-50 text-center hover:shadow-md transition">
+        <div class="text-green-400 text-3xl mb-4">🎯</div>
+        <h3 class="text-lg font-semibold mb-2">MISSION</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Memberikan layanan terbaik, tepat waktu, dan solusi kreatif
+          untuk setiap kebutuhan event.
+        </p>
+      </div>
+
+      <!-- konsep -->
+      <div class="p-6 rounded-2xl bg-gray-50 text-center hover:shadow-md transition">
+        <div class="text-yellow-400 text-3xl mb-4">💡</div>
+        <h3 class="text-lg font-semibold mb-2">CONCEPT</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Mengutamakan kreativitas, ketepatan, dan koordinasi untuk menciptakan 
+          konsep event yang berkesan dan sesuai kebutuhan klien.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Pelanggan Unggulan -->
-    <h2 class="text-2xl font-semibold text-center mb-6">Pelanggan Unggulan</h2>
+    <h2 class="text-2xl font-semibold text-center mt-12 mb-6">Pelanggan Unggulan</h2>
     <section class="overflow-hidden py-3 bg-white shadow-lg rounded-xl lg:rounded-3xl sm:rounded-xl">
       <div class="relative">
         <div class="flex w-max space-x-9 animate-scroll">
@@ -474,33 +544,35 @@
     </div>
   </footer>
 
-</body>
-
 <script>
+  const track = document.getElementById("productTrack");
+  const cards = document.querySelectorAll(".product-card");
+
+  const cardWidth = 300 + 24; 
+  const visibleCards = 3;     
   let index = 0;
 
   function slideRight() {
-    const track = document.getElementById("productTrack");
-    const card = track.children[0];
-    const cardWidth = card.offsetWidth + 24;
+    index++;
 
-    if (index < track.children.length - 3) {
-      index++;
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    if (index > cards.length - visibleCards) {
+      index = 0; 
     }
+
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 
   function slideLeft() {
-    const track = document.getElementById("productTrack");
-    const card = track.children[0];
-    const cardWidth = card.offsetWidth + 24;
+    index--;
 
-    if (index > 0) {
-      index--;
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    if (index < 0) {
+      index = cards.length - visibleCards;
     }
+
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 </script>
 
 
+</body>
 </html>
